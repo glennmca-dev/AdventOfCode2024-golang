@@ -34,23 +34,23 @@ func ReadFileLines(filePath string) ([]string, error) {
 }
 
 func RemoveDuplicates(input []int) []int {
-    set := make(map[int]struct{}) // Simulated set
-    unique := []int{}
+	set := make(map[int]struct{}) // Simulated set
+	unique := []int{}
 
-    for _, val := range input {
-        if _, exists := set[val]; !exists {
-            set[val] = struct{}{}
-            unique = append(unique, val)
-        }
-    }
+	for _, val := range input {
+		if _, exists := set[val]; !exists {
+			set[val] = struct{}{}
+			unique = append(unique, val)
+		}
+	}
 
-    return unique
+	return unique
 }
 
 func SumArray(numbers []int) int {
-    sum := 0
-    for _, num := range numbers {
-        sum += num
-    }
-    return sum
+	sum := 0
+	for _, num := range numbers {
+		sum += num
+	}
+	return sum
 }
