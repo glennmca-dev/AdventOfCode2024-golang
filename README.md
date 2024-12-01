@@ -7,7 +7,7 @@ For now, I only care about working code, it'll probably become closer to using b
 
 Maybe I'll come back and clean it up later (I won't)
 
-I'm usually a Java developer, so not having the insane amount of libraries is strange, This would usually be an import for me.
+I'm usually a Java developer, so not having the insane amount of libraries is strange, I had to implement the `set` data structure, this would usually be an import for me.
 
 --- 
 ### Setup
