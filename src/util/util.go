@@ -54,3 +54,27 @@ func SumArray(numbers []int) int {
 	}
 	return sum
 }
+
+// This one was a real pain in the hole, you cant modify the existing slice
+// for the purposes of assigning it to a new var, you need to create an
+// entirely new slice, then the correct slice, with the element removed 
+// will be returned
+func RemoveByIndex(input []int, index int) ([]int, error) {
+    if index < 0 || index >= len(input) {
+        return nil, fmt.Errorf("index out of range")
+    }
+    // Create a new slice by appending parts of the original
+    result := append([]int{}, input[:index]...)
+    result = append(result, input[index+1:]...)
+    return result, nil
+}
+
+func GetDifference(first, second int) int {
+		if first > second {
+		return first - second
+} else if second > first {
+		return second- first
+	} else {
+		return 0
+	}
+}
