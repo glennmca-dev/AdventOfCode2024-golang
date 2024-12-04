@@ -2,6 +2,7 @@ package util
 
 import (
 	"bufio"
+	"regexp"
 	"fmt"
 	"os"
 )
@@ -78,3 +79,28 @@ func GetDifference(first, second int) int {
 		return 0
 	}
 }
+
+// RemoveBetween removes content between two delimiters (inclusive).
+func RemoveBetween(input, start, end string) (string, error) {
+	// Create a regex pattern to match everything between the start and end strings
+	pattern := fmt.Sprintf(`%s.*?%s`, regexp.QuoteMeta(start), regexp.QuoteMeta(end))
+
+	// Compile the regex
+	re, err := regexp.Compile(pattern)
+	if err != nil {
+		return "", fmt.Errorf("failed to compile regex: %w", err)
+	}
+
+	// Replace all matches with an empty string
+	result := re.ReplaceAllString(input, "")
+	return result, nil
+}
+
+
+
+
+
+
+
+
+
